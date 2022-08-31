@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>PortfolioBlazorWASMv2</title>
+    <base href="/" />
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/all.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/slick.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/animate.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
+    <link href="js/Morphext-2.4.4/morphext.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="app.css" />
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+</head>
+
+<body class="material-template">
+
+    <div id="app"></div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/2.1.3/parallax.min.js"></script>
+    <script src="js/Morphext-2.4.4/morphext.min.js"></script>
+    <script>
+        window.addScript = function (lst) {
+            lst.forEach(addScriptItem);
+
+            function addScriptItem(url) {
+                var _script = document.createElement('script');
+                _script.setAttribute('src', window.location.href + url);
+                setTimeout(() => { document.head.appendChild(_script); }, 1000);
+            }
+        }
+
+        window.scrollIntoView = function (elementId) {
+            var elem = document.getElementById(elementId);
+            if (elem) {
+                elem.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    inline: "nearest"
+                });
+                //window.location.hash = elementId;
+            }
+        }
+    </script>
+</body>
+
+</html>
