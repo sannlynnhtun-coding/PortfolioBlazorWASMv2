@@ -1,8 +1,6 @@
 ﻿@page "/"
-@inject HttpClient _HttpClient
-@inject IJSRuntime _JSRuntime
 
-
+@if (data != null) { 
 <!-- mobile header -->
 <header class="mobile-header-1">
 	<div class="container">
@@ -100,7 +98,7 @@
 				<img src="images/avatar-1.svg" alt="Bolby" class="mb-4" />
 
 				<!-- info -->
-				<h1 class="mb-2 mt-0">Bolby Doe</h1>
+				<h1 class="mb-2 mt-0">@data.name</h1>
 				<span>I'm a <span class="text-rotating">UI/UX designer, Front-End developer, Photography lover</span></span>
 
 				<!-- social icons -->
@@ -185,12 +183,13 @@
 						<div class="row">
 							<div class="col-md-6">
 								<!-- about text -->
-								<p>I am Bolby Doe, web developer from London, United Kingdom. I have rich experience in web site design and building and customization, also I am good at WordPress.</p>
+								<p>@data.aboutme</p>
 								<div class="mt-3">
-									<a href="#" class="btn btn-default">Download CV</a>
+									<a href="data/mayoozin_Resume.pdf" target="_blank" class="btn btn-default">Download CV</a>
 								</div>
 								<div class="spacer d-md-none d-lg-none" data-height="30"></div>
 							</div>
+
 							<div class="col-md-6">
 								<!-- skill item -->
 								<div class="skill-item">
@@ -365,9 +364,9 @@
 						<!-- timeline item -->
 						<div class="timeline-container wow fadeInUp">
 							<div class="content">
-								<span class="time">2019 - Present</span>
-								<h3 class="title">Academic Degree</h3>
-								<p>Lorem ipsum dolor sit amet quo ei simul congue exerci ad nec admodum perfecto.</p>
+								<span class="time">@data.year</span>
+								<h3 class="title">@data.title</h3>
+								<p>@data.experience</p>
 							</div>
 						</div>
 
@@ -927,26 +926,6 @@
 	<div class="spacer" data-height="96"></div>
 	
 </main>
-
+}
 <!-- Go to top button -->
 <a href="javascript:" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
-@code {
-    private UserModel Data;
-    protected override async Task OnInitializedAsync()
-    {
-        //Data = await _HttpClient.GetFromJsonAsync<UserModel>("data/data.json");
-    }
-
-    private string targetId = "Home";
-
-    private string IsActive(string name)
-    {
-        return targetId.ToLower() == name.ToLower() ? "active" : "";
-    }
-
-    private async Task SetMenu(string _targetId)
-    {
-        targetId = _targetId.ToLower();
-        await _JSRuntime.InvokeVoidAsync("scrollIntoView", targetId);
-    }
-}
